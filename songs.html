@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet">
+	<script src="script.js" defer></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="icon" href="logo.jpg">
+	<title>ARCTIC MONKEYS</title>
+</head>
+<body>
+<nav>
+	<input type="checkbox" id="check">
+	<label for="check">
+	<i class="fa fa-bars" id="btn"></i>
+	<i class="fa fa-times" id="cancel"></i>
+</label>
+   <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="band.html">Band</a></li>
+	<li><a class="active" href="songs.html">Music</a></li>
+	<li><a href="contact.html">Contact</a></li>
+  </ul>
+
+</nav>
+<style>
+	*{
+padding: 0;
+margin: 0;
+text-decoration: none;
+list-style: none;
+}
+body{
+	min-height: 135vh;
+	background: black; 
+  display: grid;
+	font-family: cursive;
+}
+nav{
+background-color: #3b3b3b;
+height: 80px;
+}
+nav ul{
+float: right;
+margin-right: 25px;
+
+}
+
+nav ul li{
+display: inline-block;
+line-height: 80px;
+margin: 0 20px;
+}
+nav ul li a{
+position: relative;
+color: white;
+font-size: 18px;
+padding: 5px 0;
+text-transform: uppercase;
+}
+
+
+nav ul li a:before{
+position: absolute;
+content: '';
+left: 0;
+bottom: 0;
+height: 3px;
+width: 100%;
+background-color: white ;
+transform: scaleX(0);
+transform-origin: right;
+transition: transform .4s linear;
+}
+nav ul li a:hover:before{
+transform: scaleX(1);
+transform-origin: left;
+}
+nav ul li a:hover,a.active{
+background: none;
+color: white;
+font-size: 20px;
+font: bold;
+margin: 3px;
+text-decoration: underline;
+}
+label #btn,
+label #cancel{
+font-size: 30px;
+color: darkgray;
+float: right;
+line-height: 80px;
+margin-right: 40px;
+cursor: pointer;
+display: none;
+}
+#check{
+display: none;
+}
+@media (max-width: 1118px) {
+nav img{
+left: 8%
+}
+
+}
+@media (max-width: 944px) {
+nav img{
+left: 6%;
+top: 20px;
+width: 130px;
+}
+nav ul li a{
+font-size: 17px
+}
+
+}
+@media (max-width: 860px) {
+label #btn{
+display: block;
+}
+ul{
+position: fixed;
+width: 100%;
+height: 100vh;
+background: lightgray;
+top: 80px;
+left: -100%;
+text-align: center;
+transition: all .5s;
+}
+nav ul li{
+display: block;
+margin: 50px 0;
+line-height: 30px;
+}
+nav ul li a{
+font-size: 20px;
+color: black;
+}
+#check:checked ~ ul{
+left: 0;
+}
+#check:checked ~ label #btn{
+display: none;
+}
+#check:checked ~ label #cancel{
+display: block;
+}
+#check:checked ~ label .player, .wrapper, .active, .buttons, .current-time, .details, .loader, .next-track .next-track:hover, .now-playing, .playpause-track, .playpause-track:hover,
+.prev-track, .prev-track:hover, .random-track, .random-track:hover, .randomActive, .repeat-track, .repeat-track:hover, .rotate, .seek_slider, .seek_slider::-webkit-slider-thumb, .seek_slider:hover, .slider_container, .stroke{
+  display: none;
+}
+}
+.player{
+      height: 95vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+  }
+    .wrapper{
+      border: 1px solid transparent;
+      padding: 30px;
+      border-radius: 20px;
+      background-color: #ddd;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+    
+    .details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    }
+    
+    .track-art {
+    margin: 25px;
+    height: 250px;
+    width: 250px;
+    border:2px solid 	#FFFAFA;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    -moz-box-shadow: 0px 6px 5px black;
+    -webkit-box-shadow: 0px 6px 5px black;
+    box-shadow: 0px 6px 5px black;
+    -moz-border-radius:190px;
+    -webkit-border-radius:190px;
+    border-radius:190px;
+    }
+    
+    .now-playing {
+    font-size: 1rem;
+    }
+    
+    .track-name {
+    font-size: 2.5rem;
+    }
+    
+    .track-artist {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    }
+    
+    .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+	justify-content: center;
+    margin-bottom: 30px;
+    }
+    .active{
+        color: white  ;
+    }
+    
+    .repeat-track,
+    .random-track,
+    .playpause-track,
+    .prev-track,
+    .next-track {
+    padding: 25px;
+    opacity: 0.8;
+    transition: opacity .2s;
+    }
+    
+    .repeat-track:hover,
+    .random-track:hover,
+    .playpause-track:hover,
+    .prev-track:hover,
+    .next-track:hover {
+    opacity: 1.0;
+    }
+    
+    .slider_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: #60646e;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    }
+    
+    .seek_slider::-webkit-slider-thumb,
+    .volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 3px solid #4b5263;
+    cursor: grab;
+    border-radius: 100%;
+    }
+    
+    .seek_slider:hover,
+    .volume_slider:hover {
+    opacity: 1.0;
+    }
+    
+    .seek_slider {
+    width: 60%;
+    }
+    
+    .volume_slider {
+    width: 30%;
+    }
+    
+    .current-time,
+    .total-duration {
+    padding: 10px;
+    }
+    
+    i.fa-volume-down,
+    i.fa-volume-up {
+    padding: 10px;
+    }
+    
+    i,
+    i.fa-play-circle,
+    i.fa-pause-circle,
+    i.fa-step-forward,
+    i.fa-step-backward,
+    p {
+    cursor: pointer;
+    }
+    .randomActive{
+        color: gray;
+    }
+    .rotate {
+        animation: rotation 15s infinite linear;
+    }
+    @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+    }
+    .loader {
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .loader .stroke{
+        background: #f1f1f1;
+        height: 150%;
+        width: 10px;
+        border-radius: 50px;
+        margin: 0 5px;
+        animation: animate 1.4s linear infinite;
+    }
+      @keyframes animate {
+        50% {
+          height: 20%;
+          background: #5d636c;
+        }
+    
+        100% {
+          background: #606772;
+          height: 100%;
+        }
+      }
+      .stroke:nth-child(1){
+          animation-delay: 0s;
+      }
+      .stroke:nth-child(2){
+        animation-delay: 0.3s;
+    }
+    .stroke:nth-child(3){
+        animation-delay: 0.6s;
+    }
+    .stroke:nth-child(4){
+        animation-delay: 0.9s;
+    }
+    .stroke:nth-child(5){
+        animation-delay: 0.6s;
+    }
+    .stroke:nth-child(6){
+        animation-delay: 0.3s;
+    }
+    .stroke:nth-child(7){
+        animation-delay: 0s;
+    }
+</style>
+<section id="sect">
+<div class="player">
+	<div class="wrapper">
+		<div class="details">
+			<div class="now-playing"></div>
+			<div class="track-art"></div>
+			<div class="track-name">Track Name</div>
+			<div class="track-artist">Track Artist</div>
+		</div>
+
+		<div class="slider_container">
+			<div class="current-time">00:00</div>
+			 <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+			 <div class="total-duration">00:00</div>
+		</div>
+
+		<div class="slider_container">
+			<i class="fa fa-volume-down"></i>
+			 <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+			 <i class="fa fa-volume-up"></i>
+		</div>
+
+		<div class="buttons">
+			<div class="random-track" onclick="randomTrack()">
+				<i class="fas fa-random fa-2x "  title="random"></i></i>
+			</div>
+			<div class="prev-track" onclick="prevTrack()">
+				 <i class="fa fa-step-backward fa-2x"></i>
+			 </div>
+			 <div class="playpause-track" onclick="playpauseTrack()">
+				 <i class="fa fa-play-circle fa-5x"></i>
+			 </div>
+			 <div class="next-track" onclick="nextTrack()">
+				 <i class="fa fa-step-forward fa-2x"></i>
+			 </div>
+			 <div class="repeat-track" onclick="repeatTrack()">
+				 <i class="fa fa-repeat fa-2x" title="repeat"></i>
+			 </div>
+		</div>
+
+		 <div id="wave">
+			 <span class="stroke"></span>
+			 <span class="stroke"></span>
+			 <span class="stroke"></span>
+			 <span class="stroke"></span>
+			 <span class="stroke"></span>
+			 <span class="stroke"></span>
+			 <span class="stroke"></span>
+		 </div>  
+	</div>
+</div>
+</section>
+</body>
+</html>

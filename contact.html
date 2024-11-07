@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+	<link rel="icon" href="logo.jpg">
+	<title>ARCTIC MONKEYS</title>
+</head>
+<nav>
+	<input type="checkbox" id="check">
+	<label for="check">
+	<i class="fa fa-bars" id="btn"></i>
+	<i class="fa fa-times" id="cancel"></i>
+</label>
+	<a href="index.html"><img src="logo.jpg"></a>
+   <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="band.html">Band</a></li>
+	<li><a href="songs.html">MUSIC</a></li>
+	<li><a class="active" href="contact.html">Contact</a></li>
+  </ul>
+
+</nav>
+
+
+<style>
+	*{
+padding: 0;
+margin: 0;
+text-decoration: none;
+box-sizing: border-box;
+list-style: none;
+}
+body{
+background-color: lightgray;
+font-family: cursive;
+min-height: 100vh;
+}
+nav{
+background-color: whitesmoke;
+height: 80px;
+}
+nav ul{
+float: right;
+margin-right: 25px;
+
+}
+
+nav ul li{
+display: inline-block;
+line-height: 80px;
+margin: 0 20px;
+}
+nav ul li a{
+position: relative;
+color: #3b3b3b;
+font-size: 18px;
+padding: 5px 0;
+text-transform: uppercase;
+}
+nav img{
+width: 200px;
+left: 12%;
+position: absolute;
+top: 17px;
+}
+nav ul li a:before{
+position: absolute;
+content: '';
+left: 0;
+bottom: 0;
+height: 3px;
+width: 100%;
+background-color: black ;
+transform: scaleX(0);
+transform-origin: right;
+transition: transform .4s linear;
+}
+nav ul li a:hover:before{
+transform: scaleX(1);
+transform-origin: left;
+}
+nav ul li a:hover,a.active{
+background: none;
+color: black;
+font-size: 20px;
+font: bold;
+margin: 3px;
+text-decoration: underline;
+}
+label #btn,
+label #cancel{
+font-size: 30px;
+color: darkgray;
+float: right;
+line-height: 80px;
+margin-right: 40px;
+cursor: pointer;
+display: none;
+}
+#check{
+display: none;
+}
+@media (max-width: 1118px) {
+nav img{
+left: 8%
+}
+
+}
+@media (max-width: 944px) {
+nav img{
+left: 6%;
+top: 20px;
+width: 130px;
+}
+nav ul li a{
+font-size: 17px
+}
+
+}
+@media (max-width: 860px) {
+label #btn{
+display: block;
+}
+ul{
+position: fixed;
+width: 100%;
+height: 100vh;
+background: white;
+top: 80px;
+left: -100%;
+text-align: center;
+transition: all .5s;
+}
+nav ul li{
+display: block;
+margin: 50px 0;
+line-height: 30px;
+}
+nav ul li a{
+font-size: 20px
+}
+#check:checked ~ ul{
+left: 0;
+}
+#check:checked ~ label #btn{
+display: none;
+}
+#check:checked ~ label #cancel{
+display: block;
+}
+#check:checked ~ label .contact-section, .contact-info, .contact-info i, .contact-form{
+  display: none;
+}
+}
+.contact-section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info{
+  color: black;
+  max-width: 500px;
+  line-height: 65px;
+  padding-left: 50px;
+  font-size: 18px;
+}
+
+.contact-info i{
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.contact-form{
+  max-width: 700px;
+  margin-right: 50px;
+}
+
+.contact-info, .contact-form{
+  flex: 1;
+}
+
+.contact-form h2{
+  color: black;
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.contact-form .text-box{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 10px);
+  height: 50px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.contact-form .text-box:first-child{
+  margin-right: 15px;
+}
+
+.contact-form textarea{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  min-height: 200px;
+  max-height: 400px;
+  resize: vertical;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.contact-form .send-btn{
+  float: right;
+  background: #2E94E3;
+  color: #fff;
+  border: none;
+  width: 120px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+.contact-form .send-btn:hover{
+  background: #0582E3;
+}
+
+@media screen and (max-width: 950px){
+  .contact-section{
+    flex-direction: column;
+  }
+
+  .contact-info, .contact-form{
+    margin: 30px 50px;
+  }
+
+  .contact-form h2{
+    font-size: 30px;
+  }
+
+  .contact-form .text-box{
+    width: 100%;
+  }
+}
+
+/*css for alert messages*/
+
+.alert-success{
+  z-index: 1;
+  background: #D4EDDA;
+  font-size: 18px;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-left: 8px solid #3AD66E;
+  border-radius: 4px;
+}
+
+.alert-error{
+  z-index: 1;
+  background: #FFF3CD;
+  font-size: 18px;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-left: 8px solid #FFA502;
+  border-radius: 4px;
+}
+
+</style>
+<body>
+  
+
+    <!--alert messages start
+    <div class="alert-success">
+      <span>Message Sent! Thank you for contacting us.</span>
+    </div>
+    <div class="alert-error">
+      <span>Something went wrong! Please try again.</span>
+    </div>
+    alert messages end-->
+
+    <!--contact section start-->
+    <div class="contact-section">
+      <div class="contact-info">
+        <div><i class="fas fa-map-marker-alt"></i>Saint Ignatius, Cabuyao, Laguna</div>
+        <div><i class="fas fa-envelope"></i>ThailandABM@email.com</div>
+        <div><i class="fas fa-phone"></i>+63 951 114 3101</div>
+
+      </div>
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form class="contact" method="post">
+          <input type="text" name="name" class="text-box" placeholder="Your Name" required>
+          <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <input type="submit" name="submit" class="send-btn" value="Send">
+        </form>
+      </div>
+    </div>
+    <!--contact section end-->
+</body>
+</html>

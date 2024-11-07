@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+	<link rel="icon" href="logo.jpg">
+	<title>ARCTIC MONKEYS</title>
+</head>
+<body>
+<nav>
+	<input type="checkbox" id="check">
+	<label for="check">
+	<i class="fa fa-bars" id="btn"></i>
+	<i class="fa fa-times" id="cancel"></i>
+</label>
+	<a href="index.html"><img src="logo.jpg"></a>
+   <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a class="active" href="band.html">Band</a></li>
+	<li><a href="songs.html">Music</a></li>
+	<li><a href="contact.html">Contact</a></li>
+  </ul>
+
+</nav>
+<style>
+	*{
+padding: 0;
+margin: 0;
+text-decoration: none;
+list-style: none;
+}
+body{
+font-family: cursive;
+
+}
+nav{
+background-color: whitesmoke;
+height: 80px;
+}
+nav ul{
+float: right;
+margin-right: 25px;
+
+}
+
+nav ul li{
+display: inline-block;
+line-height: 80px;
+margin: 0 20px;
+}
+nav ul li a{
+position: relative;
+color: #3b3b3b;
+font-size: 18px;
+padding: 5px 0;
+text-transform: uppercase;
+}
+nav img{
+width: 200px;
+left: 12%;
+position: absolute;
+top: 17px;
+}
+nav ul li a:before{
+position: absolute;
+content: '';
+left: 0;
+bottom: 0;
+height: 3px;
+width: 100%;
+background-color: black ;
+transform: scaleX(0);
+transform-origin: right;
+transition: transform .4s linear;
+}
+nav ul li a:hover:before{
+transform: scaleX(1);
+transform-origin: left;
+}
+nav ul li a:hover,a.active{
+background: none;
+color: black;
+font-size: 20px;
+font: bold;
+margin: 3px;
+text-decoration: underline;
+
+}
+label #btn,
+label #cancel{
+font-size: 30px;
+color: darkgray;
+float: right;
+line-height: 80px;
+margin-right: 40px;
+cursor: pointer;
+display: none;
+}
+#check{
+display: none;
+}
+@media (max-width: 1118px) {
+nav img{
+left: 8%;
+}
+
+}
+@media (max-width: 944px) {
+nav img{
+left: 6%;
+top: 20px;
+width: 130px;
+}
+nav ul li a{
+font-size: 17px
+}
+
+}
+@media (max-width: 860px) {
+label #btn{
+display: block;
+}
+ul{
+position: fixed;
+width: 100%;
+height: 100vh;
+background: white;
+top: 80px;
+left: -100%;
+text-align: center;
+transition: all .5s;
+}
+nav ul li{
+display: block;
+margin: 50px 0;
+line-height: 30px;
+}
+nav ul li a{
+font-size: 20px;
+}
+#check:checked ~ ul{
+left: 0;
+}
+#check:checked ~ label #btn{
+display: none;
+}
+#check:checked ~ label #cancel{
+display: block;
+}
+}
+#sect{
+height: auto;
+width: 100%;
+background: darkgray;
+max-width: 1670px;
+}
+#taballs{
+    width: 70%;
+    height: 285vh;
+    margin-left: 15%;
+    background: aliceblue;
+}
+#hahaha{
+    max-width: 1170px;
+    margin: auto;
+}
+#eyy{
+    margin-left: 70%;
+    color: black;
+    text-decoration: underline;
+}
+#eyyy{
+    margin-left: 74%;
+    color: black;
+}
+#row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.container{
+  max-width: 1170px ;
+  margin: auto;
+}
+
+.footer{
+  background: #5e5e5e;
+  padding: 30px 0;
+}
+.footer-col{
+  width: 25%;
+  padding: 0 30px;
+  margin-left: 10px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: #000000;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-weight: 600;
+  position: relative;
+}
+.footer-col h4::before{
+  content: ''; 
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background: #c6bbbb;
+  height: 2px;
+  box-sizing: border-box;
+  width: 40px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #fffcfc;
+  text-decoration: none;
+  color: #afafaf;
+  font-weight: 300;
+  display: block;
+}
+.footer-col ul li a:hover{
+  color: #fffcfc;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background: #3b3b3b;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fffcfc;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #007bff;
+  background: #fffcfc;
+}
+.footer-col .social-links .ig a:hover{
+  color: #ff5100;
+  background: #fffcfc;
+}
+.footer-col .social-link a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background: #3b3b3b;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fffcfc;
+  transition: all 0.5s ease;
+}
+.footer-col .social-link a:hover{
+  color: #ff2600;
+  background: #fffcfc;
+}
+</style>
+<section id="sect">
+	<table id="taballs">
+		<tr>
+			<td id="hahaha">
+
+
+	The band's wider international fame 
+	came with the success of their 
+	critically acclaimed fifth album 
+	AM (2013), which was supported by 
+	the global hit "Do I Wanna Know?". 
+	It topped four Billboard charts and 
+	was certified platinum in the US. At 
+	the 2014 BRIT Awards, the album became
+	their third to win British Album of the 
+	Year. Their sixth album, Tranquility 
+	Base Hotel & Casino (2018), was a major 
+	departure from the band's previous 
+	guitar-heavy work, instead being piano-
+	oriented. It received a Best Alternative 
+	Music Album nomination at the 2019 
+	Grammy Awards, their second to do so after 
+	Whatever People Say I Am, That's What I'm Not.
+	<br>
+	<br>
+	In the United Kingdom, the band became the first 
+	independent-label band to debut at number one in 
+	the UK with their first five albums. The band
+	have won seven Brit Awards; winning Best British 
+	Group and British Album of the Year three times, 
+	becoming the first band to ever "do the double" 
+	(that is, win in both categories) three times; a 
+	Mercury Prize for Whatever People Say I Am, That's 
+	What I'm Not, an Ivor Novello Award, and 20 NME 
+	Awards. In addition, they have been nominated for 
+	six Grammy Awards, and received Mercury Prize 
+	nominations in 2007, 2013, and 2018. Both Whatever 
+	People Say I Am, That's What I'm Not and AM are 
+	included in NME's and different editions of Rolling 
+	Stone's 500 Greatest Albums of All Time lists.
+	<br>
+	<br>
+	<h2>History</h2>
+	<h3>2002–2005: Early years and record deal</h3>
+	<br>
+	The Arctic Monkeys were formed in mid-2002 by 
+	friends Alex Turner, Matt Helders, and Andy 
+	Nicholson. Turner and Helders were neighbours 
+	and close friends, and they met Nicholson in 
+	secondary school. Turner, who had grown up in 
+	a musical household as his father was a music 
+	teacher, played guitar in the then-instrumental-
+	only band, with Helders on drums, Nicholson on bass, 
+	and a new band member, Jamie Cook as a second g
+	uitarist. The name "Arctic Monkeys" was Cook's 
+	idea, and is perhaps a play on "northern monkey", 
+	a derogatory term for someone from northern England. 
+	Initially, Turner was reluctant when it came to being 
+	the lead singer. As time passed, Turner became the 
+	lead singer and frontman of the band as he had "a 
+	thing for words", according to Helders. The band 
+	began rehearsing at Yellow Arch Studios in Neepsend, 
+	and played its first gig on 13 June 2003 at The Grapes 
+	in Sheffield citreleasedy centre. After a few performances 
+	in 2003, the band began to record demos at 2fly studios
+	in Sheffield. 18 songs were demoed in all and the 
+	collection, now known as Beneath the Boardwalk, was 
+	burned onto CDs to give away at gigs, which were 
+	promptly file-shared amongst fans. The name 
+	Beneath the Boardwalk originated when the first 
+	batch of demos were sent around. The first sender, 
+	wanting to classify the demos, named them after where 
+	he received them, the Boardwalk. Slowly, as 
+	more demos were spread, they were all classified under 
+	this name. This has led to many people falsely believing 
+	that Beneath the Boardwalk was an early album, or that 
+	the early demos were all released under this title. 
+	The group did not mind the distribution, saying "we 
+	never made those demos to make money or anything. We 
+	were giving them away free anyway that was a better 
+	way for people to hear them."
+<br>
+<br>
+	The band began to grow in popularity across the 
+	north of England, receiving attention from BBC 
+	Radio and the British tabloid press. A local 
+	amateur photographer, Mark Bull, filmed the 
+	band's performances and made the music video 
+	"Fake Tales of San Francisco", releasing it 
+	on his website, alongside the contents of 
+	Beneath the Boardwalk a collection of the 
+	band's songs which he named after a local 
+	music venue. When asked about the popularity 
+	of the band's MySpace site, the band said 
+	that they were unaware of what it was and 
+	that the site had originally been created by 
+	their fans. In May 2005, Arctic Monkeys 
+	released the EP Five Minutes with Arctic 
+	Monkeys on their own 'Bang Bang' label, 
+	featuring the songs "Fake Tales of San 
+	Francisco" and "From the Ritz to the Rubble".
+	This release was limited to 500 CDs 
+	and 1,000 7" records, but was also available 
+	to download from the iTunes Music Store.
+	Soon after, the band played at the Carling 
+	Stage of the Reading and Leeds Festivals, 
+	reserved for less known or unsigned bands.
+<br>
+<br>
+	Eventually, they were signed to Domino in 
+	June 2005. The band said they were 
+	attracted to the DIY ethic of Domino owner 
+	Laurence Bell, who ran the label from his 
+	flat and only signed bands that he liked 
+	personally. The UK's Daily Star reported 
+	that this was followed in October by a £1 
+	million publishing deal with EMI and a 
+	£725,000 contract with Epic Records for 
+	the United States. Arctic Monkeys denied 
+	this on their website, dubbing the newspaper 
+	"The Daily Stir". However, Domino had licensed 
+	the Australian and New Zealand publishing rights 
+	to EMI and the Japanese rights to independent 
+	label Hostess. Their debut single "I Bet You 
+	Look Good on the Dancefloor", which was recorded 
+	at Chapel Studios in Lincolnshire, was released 
+	on 17 October 2005 and went straight to No. 1 on 
+	the UK Singles Chart. Their second single, 
+	"When the Sun Goes Down" (previously titled "Scummy"), 
+	released on 16 January 2006, also went straight to 
+	No. 1 on the UK Singles Chart. The 
+	band's success with little marketing or advertising 
+	led some to suggest that it could signal a change 
+	in how new bands achieve recognition.
+	<br>
+<h3>2006: Whatever People Say I Am, That's What I'm Not</h3>
+<br>
+	The band finished recording their debut album, Whatever 
+	People Say I Am, That's What I'm Not, at Chapel Studios
+	in Lincolnshire in September 2005 with British record 
+	producer Jim Abbiss producing. Whatever 
+	People Say I Am, That's What I'm Not became the 
+	fastest-selling debut album in UK chart history, 
+	selling 363,735 copies in the first week This 
+	surpassed the previous record of 306,631 copies held 
+	by Popstars by Hear'Say, and sold more copies on its 
+	first day alone 118,501 than the rest of the Top 20 albums 
+	combined. The cover sleeve of Whatever People Say I Am, 
+	That's What I'm Not, showing Chris McClure, a friend of the 
+	band smoking a cigarette, was criticised by the head of the 
+	NHS in Scotland for "reinforcing the idea that smoking is 
+	okay". The image on the CD itself is a shot of an 
+	ashtray full of cigarettes. The band's product manager 
+	denied the accusation, and suggested the opposite 
+	"You can see from the image smoking is not doing him 
+	the world of good."
+	<br>
+	<br>
+	The record was released a month later in the US on 21 
+	February 2006 and entered at No. 24 on the 
+	Billboard album chart after it sold 34,000 units in 
+	its first week, making it the second fastest selling 
+	for a debut indie rock album in America.
+	However, US sales for the first year did not match 
+	those of the first week in the UK for the album. US 
+	critics were more reserved about the band than their 
+	UK counterparts, and appeared unwilling to be drawn 
+	into the possibility of "yet another example of the 
+	UK's press over-hyping new bands". However, the 
+	band's June 2006 tour of North America received 
+	critical acclaim at each stop the hype 
+	surrounding them "proven to exist for good reason".
+	The album was certified Gold by the RIAA in 2017 for 
+	selling over 500,000 units in the United States.
+	Meanwhile, the UK's NME magazine declared the band's 
+	debut album the "5th greatest British album of all time".
+	It also equalled the record of the Strokes and Oasis at 
+	the 2006 NME Awards, winning three fan-voted awards for
+	Best British Band, Best New Band and Best Track for 
+	"I Bet You Look Good on the Dancefloor".
+	<br><br>
+	Arctic Monkeys wasted no time in recording new 
+	material, and released Who the Fuck Are Arctic 
+	Monkeys?, a five-track EP on 24 April 2006.
+	Due to its length, the EP was ineligible to chart 
+	as a UK single or album. Furthermore, the record's 
+	graphic language has resulted in significantly less 
+	radio airplay than previous records, although this
+	was not a reported concern according to an insider 
+	"since they made their name on the Internet... they 
+	don't care if they don't get radio play". The 
+	release of the EP Who the Fuck Are Arctic Monkeys? 
+	just three months after their record-breaking debut
+	album has been criticised by some, who have seen 
+	it as "money-grabbing" and "cashing in on their 
+	success". The band countered that it regularly 
+	releases new music not to make money, but to avoid 
+	the "boredom" of "spending three years touring on one album".
+	<br><br>
+	Soon after the release of the EP in the UK, the 
+	band announced that Andy Nicholson would not take 
+	part in the band's forthcoming North America tour 
+	due to fatigue from "an intensive period of touring".
+	On returning to the UK, Nicholson confirmed that he 
+	would leave Arctic Monkeys and start his own project.
+	He also said that he couldn't deal with the band's 
+	fame and success over the previous six months. In 
+	a statement on their official website, the band said: 
+	"We are sad to tell everyone that Andy is no longer with 
+	the band", also confirmed that Nick O'Malley former 
+	bassist with the Dodgems who had drafted in as temporary 
+	bassist for the tour would continue as bassist for 
+	the rest of their summer tour schedule. Shortly 
+	after, Nick O'Malley was confirmed as the formal replacement 
+	for Nicholson.
+	<br><br>
+	Arctic Monkeys' first release without Nicholson, the single 
+	"Leave Before the Lights Come On", came on 14 August 2006.
+	Turner said that the song was one of the last songs he wrote 
+	before their rise to fame, and suggested that "it feels very 
+	much like it could be on the album". Peaking at No. 4 in 
+	the UK, the single became the band's first single not to reach 
+	No. 1. The band was re-united at the Leeds Festival when 
+	Nicholson met up with his former bandmates and his replacement 
+	bassist, O'Malley. Only the original band members, minus 
+	Nicholson, were present at the award ceremony when Whatever 
+	People Say I Am, That's What I'm Not won the 2006 Mercury Prize 
+	two weeks later.
+	<br>
+	<br>
+
+	<h1><a href="https://www.classicrockhistory.com/complete-list-of-arctic-monkeys-band-members/" id="eyy">"For more info Click Here"</a></h1>
+	<h4 id="eyyy">Informartion from classicrockhistory</h4>
+			</td>
+		</tr>
+	</table>
+</section>
+	<footer class="footer">
+		<div class="container">
+			<div id="row">
+					<div class="footer-col">
+						<h4>Links</h4>
+							<ul>
+								<li><a href="index.html">home</a></li>
+								<li><a href="band.html">band</a></li>
+								<li><a href="songs.html">music</a></li>
+								<li><a href="contact.html">contact</a></li>
+							</ul>	
+							</div>
+							<div class="footer-col">
+								<h4>Follow Us</h4>
+							<div class="class social-links">
+									<a href="https://web.facebook.com/profile.php?id=61565967505938"><i class="fa fa-facebook" ></i></a>
+								</div>
+								<div class="class social-link">
+
+									<a href="https://www.instagram.com/thai.land6514/"><i class="fa fa-instagram"></i></a>
+									</div>
+			</div></div></div></footer>	
+	</section>
+
+</body></html>
